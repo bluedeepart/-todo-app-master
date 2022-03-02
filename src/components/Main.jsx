@@ -16,7 +16,7 @@ const Main = () => {
       {location.pathname.indexOf("completed") < 0 && <AddTaskFOrm />}
       <Routes>
           <Route path="/todo-app-master/">
-            <Route index path="all" element={<AllTask />} />
+            <Route index element={<AllTask />} />
             <Route path="active" element={<ActiveTasks />} />
             <Route path="completed" element={<CompletedTasks />} />
           </Route>

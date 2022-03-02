@@ -10,7 +10,7 @@
       Demo
     </a>
     <span> | </span>
-    <a href="https://github.com/bluedeepart/-todo-app-master.git">
+    <a href="https://github.com/bluedeepart/todo-app-master.git">
       Solution
     </a>
     <span> | </span>
@@ -65,7 +65,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/bluedeepart/-todo-app-master.git
+$ git clone https://github.com/bluedeepart/todo-app-master.git
 
 # Install dependencies
 $ npm install

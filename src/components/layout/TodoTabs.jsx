@@ -4,7 +4,7 @@ const TodoTabs = () => {
   return (
     <ul className="tab-list">
       <li className="tab-list-item">
-        <NavLink to="/todo-app-master/all">All</NavLink>
+        <NavLink to="/todo-app-master">All</NavLink>
       </li>
       <li className="tab-list-item">
         <NavLink to="/todo-app-master/active">Active</NavLink>
