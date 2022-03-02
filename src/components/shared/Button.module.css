@@ -1,0 +1,111 @@
+/* Button */
+
+.btn {
+  border: none;
+  padding: 12px 30px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  background-color: #e0e0e0;
+  box-shadow: 0px 2px 3px rgba(51, 51, 51, 0.2);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn:disabled {
+  pointer-events: none;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #aeaeae;
+}
+
+.btnText,
+.btnOutline {
+  color: #3d5afe;
+  background-color: #fff;
+  box-shadow: none;
+}
+
+.btnOutline {
+  border: 1px solid #3d5afe;
+}
+
+.btnOutline:hover,
+.btnOutline:focus,
+.btnText:hover,
+.btnText:focus {
+  background-color: rgba(41, 98, 255, 0.1);
+}
+
+.btnText:disabled,
+.btnOutline:disabled {
+  color: #9e9e9e;
+  border-color: #e0e0e0;
+}
+
+.no-shadow {
+  box-shadow: none;
+}
+
+.btn.no-shadow:disabled {
+  color: #9e9e9e;
+  background-color: #e0e0e0;
+}
+
+.btnPrimary {
+  color: #fff;
+  background-color: #2f80ed;
+}
+
+.btnPrimary:hover,
+.btnPrimary:focus {
+  background-color: #0039cb;
+}
+
+.btnSecondary {
+  color: #fff;
+  background-color: #455a64;
+}
+
+.btnSecondary:hover,
+.btnSecondary:focus {
+  background-color: #1c313a;
+}
+
+.btnDanger {
+  color: #fff;
+  background-color: #eb5757;
+}
+
+.btnDanger:hover,
+.btnDanger:focus {
+  background-color: #9a0007;
+}
+
+.startIcon svg {
+  margin-right: 8px;
+}
+
+.endIcon svg {
+  margin-left: 8px;
+}
+
+.btnSm {
+  padding: 6px 12px;
+}
+
+.btnMd {
+  padding: 8px 16px;
+}
+
+.btnLg {
+  padding: 20px 40px;
+}

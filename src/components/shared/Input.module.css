@@ -1,0 +1,124 @@
+/* Input */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #828282;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #828282;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #828282;
+  }
+
+.input-group {
+  position: relative;
+  display: inline-block;
+}
+
+.input-group.not(.startIcon):not(.endIcon) .icon{
+    display: none;
+}
+
+.input-label {
+  font-size: 12px;
+  line-height: 17px;
+  color: #333;
+  margin-bottom: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.input-control {
+  padding: 18px 12px;
+  border: 1px solid #BDBDBD;
+  border-radius: 8px;
+  color: #333333;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  min-width: 200px;
+  outline: none;
+  resize: none;
+  width: 100%;
+}
+
+.input-control:disabled{
+    pointer-events: none;
+}
+
+.input-control:focus{
+    border-color: #2962FF;
+}
+
+.input-control:focus ~ .input-label,
+.input-control:active ~ .input-label{
+    color: #2962FF;
+}
+
+.help-msg{
+    font-size: 10px;
+    line-height: 14px;
+    margin-top: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.error,
+.error .input-label,
+.error .input-control:focus ~ .input-label,
+.error .input-control:active ~ .input-label{
+    color: #D32F2F;
+}
+
+.error .input-control {
+    border-color: #D32F2F;
+}
+
+.startIcon svg,
+.endIcon svg{
+    position: absolute;
+    top: 33px;
+    width: 30px;
+    height: 30px;
+    fill: #828282;
+}
+
+.startIcon svg{
+    left: 12px;
+}
+
+.endIcon svg{
+    right: 12px;
+}
+
+.startIcon .input-control{
+    padding-left: 50px;
+}
+
+.endIcon .input-control{
+    padding-right: 50px;
+}
+
+.sm .input-control{
+    padding: 10px 12px;
+}
+
+.md .input-control{
+    padding: 18px 12px;
+}
+
+.fullWidth,
+.fullWidth .input-control{
+    display: block;
+    width: 100%;
+}
+
+@media only screen and (max-width: 450px){
+    .input-control{
+        min-width: 100%;
+    }
+}
