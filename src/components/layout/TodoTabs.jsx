@@ -4,13 +4,13 @@ const TodoTabs = () => {
   return (
     <ul className="tab-list">
       <li className="tab-list-item">
-        <NavLink to="/todo-app-master">All</NavLink>
+        <NavLink to="/">All</NavLink>
       </li>
       <li className="tab-list-item">
-        <NavLink to="/todo-app-master/active">Active</NavLink>
+        <NavLink to="active">Active</NavLink>
       </li>
       <li className="tab-list-item">
-        <NavLink to="/todo-app-master/completed">Completed</NavLink>
+        <NavLink to="completed">Completed</NavLink>
       </li>
     </ul>
   );

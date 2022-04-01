@@ -8,7 +8,7 @@ import { TaskContextProvider } from "./context/TaskContext";
 function App() {
 
   return (
-    <Router>
+    <Router basename="/todo-app-master/">
       <TaskContextProvider>
         <div className="todo-wrapper">
           <Header />

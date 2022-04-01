@@ -14,18 +14,40 @@ export const TaskContextProvider = ({ children }) => {
       (task) => task.completed && setIsCompletedTask(!isCompletedTask)
     );
 
+    const getItems = setTimeout(() => {
+      let tasks;
+      if (localStorage.getItem("tasks") === null) {
+        tasks = [];
+      } else {
+        tasks = JSON.parse(localStorage.getItem("tasks"));
+        setAllTasksData(tasks);
+      }
+      return tasks;
+    }, 500);
+
+    return () => {
+      clearTimeout(getItems);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /* add task */
   const addNewTaskHandler = (newTask) => {
+    localStorage.setItem("tasks", JSON.stringify([newTask, ...allTasksData]));
     setAllTasksData([newTask, ...allTasksData]);
   };
 
   /* delete task */
   const deleteTaskHandler = (id) => {
     if (window.confirm("Are your sure you want to delete task?")) {
-      setAllTasksData(allTasksData.filter((task) => task.id !== id));
+      const deletedTask = allTasksData.filter((task) => task.id !== id);
+      console.log(allTasksData.length);
+      if(allTasksData.length === 1){
+        localStorage.removeItem("tasks");
+      }else{
+        localStorage.setItem("tasks", JSON.stringify([deletedTask]));
+      }
+      setAllTasksData(deletedTask);
     }
   };
 
@@ -38,19 +60,24 @@ export const TaskContextProvider = ({ children }) => {
       completed: e.target.checked,
     };
 
-    setAllTasksData(
-      allTasksData.map((task) =>
-        task.id.toString() === updateTask.id.toString()
-          ? { ...task, ...updateTask }
-          : task
-      )
+    const complatedTasks = allTasksData.map((task) =>
+      task.id.toString() === updateTask.id.toString()
+        ? { ...task, ...updateTask }
+        : task
     );
+
+    localStorage.setItem("tasks", JSON.stringify(complatedTasks));
+    setAllTasksData(complatedTasks);
   };
 
   /* remove completed task */
   const removeCompletedTask = () => {
     if (window.confirm("Are your sure you want to delete all tasks?")) {
-      setAllTasksData(allTasksData.filter((task) => task.completed === false));
+      const taskToRemove = allTasksData.filter(
+        (task) => task.completed === false
+      );
+      localStorage.removeItem("tasks", JSON.stringify(taskToRemove));
+      setAllTasksData(taskToRemove);
     }
   };
 

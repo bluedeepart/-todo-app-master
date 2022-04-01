@@ -14,12 +14,16 @@ const CompletedTasks = () => {
   const { allTasksData, location, removeCompletedTask } = taskCtx;
 
   useEffect(() => {
-    setTimeout(() => {
+    const cmpTask = setTimeout(() => {
       if (location.pathname.indexOf("completed") > 0) {
         setCompletedTasks(allTasksData.filter((task) => task.completed));
       }
       setLoading(false);
-    }, 500);
+    }, 400);
+
+    return () => {
+      clearTimeout(cmpTask);
+    };
   }, [location.pathname, allTasksData]);
 
   if (loading) {

@@ -19,7 +19,7 @@ const TaskItem = (task) => {
   const completeTask = (e) => {
     completeTaskToggler(e);
     setIsCompleted(!isCompletedTask);
-    console.log(!isCompletedTask);
+    // console.log(!isCompletedTask);
   };
 
   return (
